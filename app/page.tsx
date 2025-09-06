@@ -47,7 +47,7 @@ export default function Page() {
         <div className="relative container py-24 lg:py-28">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              El puente confiable entre Chile y Asia Pacífico
+              El puente confiable entre Chile/LatAm y Asia Pacífico
             </h1>
             <p className="mt-4 text-neutral-300 max-w-2xl">
               Membresías 2026–2030 con beneficios reales para importadores y exportadores.
