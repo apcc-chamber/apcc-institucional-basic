@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="font-medium text-neutral-300">
                 Cámara de Comercio Asia Pacífico – APCC
               </div>
-              <div>Santiago, Chile · Alianzas en Perú y Bolivia</div>
+              <div>Santiago, Chile · Alianzas en LatAm y Asia</div>
               <div>info@asiapacific-chamber.com · +56 9 2008 0031</div>
             </div>
 
@@ -61,8 +61,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex flex-wrap gap-4 text-xs">
               <NavLink href="/servicios">Servicios</NavLink>
               <NavLink href="/recursos">Recursos</NavLink>
-              <NavLink href="/beneficios">Beneficios</NavLink>
               <NavLink href="/directorio">Directorio</NavLink>
+              <NavLink href="/hklaba">HKLABA</NavLink>
             </div>
 
             <div className="text-xs">
