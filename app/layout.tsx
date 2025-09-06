@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
-import DefaultSeoClient from '@/components/DefaultSeoClient';
-
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -19,10 +17,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className="scroll-smooth">
       <body>
-        <DefaultSeoClient />
         <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 border-b border-neutral-800">
           <nav className="container h-16 flex items-center justify-between">
-            <Link href="/" className="text-xl font-semibold tracking-tight">Cámara de Comercio Asia Pacífico – APCC</Link>
+            <Link href="/" className="text-xl font-semibold tracking-tight">
+              Cámara de Comercio Asia Pacífico – APCC
+            </Link>
             <div className="hidden md:flex items-center gap-6">
               <a href="/#beneficios" className="text-sm text-neutral-300 hover:text-white">Beneficios</a>
               <NavLink href="/membresias">Membresías</NavLink>
@@ -48,3 +47,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
