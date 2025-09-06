@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = { title: 'Inicio' };
 
+// ------- Nuevos socios (mock) -------
 type NewPartner = {
   name: string;
   logo: string;          // ruta en /public
@@ -27,7 +28,7 @@ const NEW_PARTNERS: NewPartner[] = [
     logo: '/partners/beta-logo.png',
     website: 'https://beta.example.com',
     x: 'https://x.com/grupobeta',
-    blurb: 'Exportador de alimentos que impulsa productos con certificaciones y estándares internacionales.',
+    blurb: 'Exportador de alimentos con certificaciones y estándares internacionales.',
   },
   {
     name: 'Empresa Gamma',
@@ -46,41 +47,61 @@ export default function Page() {
         <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(153,27,27,0.25),rgba(0,0,0,0)_70%)]" />
         <div className="relative container py-24 lg:py-28">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            <p className="text-xs tracking-widest uppercase text-neutral-400">Plan 2026–2030</p>
+            <h1 className="mt-2 text-4xl md:text-6xl font-bold leading-tight">
               El puente confiable entre Chile/LatAm y Asia Pacífico
             </h1>
             <p className="mt-4 text-neutral-300 max-w-2xl">
-              Membresías 2026–2030 con beneficios reales para importadores y exportadores.
+              La cámara de comercio más enfocada en <strong>resultados</strong> para empresas de Chile y LatAm:
+              inteligencia comercial, networking y acceso directo a mercados.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/membresias" className="btn btn-primary">Ver planes</Link>
-              <a href="#beneficios" className="btn btn-secondary">Beneficios</a>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/membresias" className="btn btn-primary">Comparar planes</Link>
+              <a href="#beneficios" className="btn btn-secondary">Ver beneficios</a>
               <Link href="/contacto" className="btn btn-secondary">Habla con nosotros</Link>
             </div>
-            <div className="mt-10 text-sm text-neutral-400">
-              2 misiones comerciales al año · Webinars mensuales · Networking trimestral
+            <div className="mt-8 text-sm text-neutral-400">
+              2 misiones comerciales/año · Webinars mensuales · Networking trimestral
             </div>
           </div>
         </div>
       </section>
 
-      {/* ¿QUÉ HACEMOS? – texto renovado 2026–2030 */}
-      <section id="que-hacemos" className="container py-14 border-t border-neutral-800">
+      {/* PROOF STRIP */}
+      <section className="border-y border-neutral-800 bg-neutral-950/40">
+        <div className="container py-6 grid gap-4 md:grid-cols-3 text-sm">
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-xl border border-neutral-800 grid place-items-center">🌏</div>
+            <p className="text-neutral-300"><strong>Asia-first:</strong> foco en Hong Kong, China y hubs APAC.</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-xl border border-neutral-800 grid place-items-center">🤝</div>
+            <p className="text-neutral-300"><strong>Business Matching:</strong> proveedores y compradores verificados.</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-xl border border-neutral-800 grid place-items-center">📈</div>
+            <p className="text-neutral-300"><strong>Renovación por valor:</strong> programas medibles y continuos.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ¿QUÉ HACEMOS? – 2026–2030 */}
+      <section id="que-hacemos" className="container py-14">
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-3">
             <h2 className="text-2xl md:text-3xl font-semibold">¿Qué hacemos?</h2>
             <p className="mt-3 text-neutral-300 max-w-3xl">
-              La <strong>Cámara de Comercio Asia Pacífico (APCC)</strong> impulsa el éxito de importadores, exportadores y empresas que buscan crecer en Asia y Latinoamérica.
-              Nuestro <strong>Plan Estratégico 2026–2030</strong> está diseñado para entregar valor real y constante, combinando
+              La <strong>Cámara de Comercio Asia Pacífico (APCC)</strong> impulsa el éxito de importadores, exportadores y empresas
+              que buscan crecer en Asia y LatAm. Nuestro <strong>Plan 2026–2030</strong> entrega valor real y constante combinando
               <em> inteligencia comercial</em>, <em>networking</em> y <em>acceso directo a mercados</em>.
             </p>
           </div>
 
           <article className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
             <div className="text-xs uppercase tracking-wider text-neutral-500">Programas</div>
-            <h3 className="mt-2 text-lg font-semibold">Mesas de Trabajo Especializadas (Roundtables)</h3>
+            <h3 className="mt-2 text-lg font-semibold">Mesas de Trabajo (Roundtables)</h3>
             <p className="mt-2 text-sm text-neutral-400">
-              Espacios sectoriales para resolver desafíos comunes, compartir experiencias y generar alianzas de negocio.
+              Espacios por sector para resolver desafíos comunes, compartir experiencias y generar alianzas de negocio.
             </p>
           </article>
 
@@ -88,7 +109,7 @@ export default function Page() {
             <div className="text-xs uppercase tracking-wider text-neutral-500">Internacionalización</div>
             <h3 className="mt-2 text-lg font-semibold">Misiones Comerciales a Asia</h3>
             <p className="mt-2 text-sm text-neutral-400">
-              Dos viajes anuales a ferias y hubs estratégicos en Hong Kong, China y Asia; con agenda curada y reuniones 1:1.
+              Dos viajes anuales a ferias y hubs estratégicos (Hong Kong, China, APAC) con agenda curada y reuniones 1:1.
             </p>
           </article>
 
@@ -102,14 +123,13 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SUPPORTING ORGANIZATIONS (barra de logos) */}
+      {/* SUPPORTING ORGANIZATIONS */}
       <section id="supporting-orgs" className="border-y border-neutral-800">
         <div className="container py-10">
           <div className="text-xs uppercase tracking-widest text-neutral-500">
             Supporting Organizations
           </div>
           <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4 items-center">
-            {/* Reemplaza por archivos reales en /public/supporters/ */}
             {[
               '/supporters/logo-1.png',
               '/supporters/logo-2.png',
@@ -139,14 +159,14 @@ export default function Page() {
         <div className="max-w-3xl">
           <h2 className="text-2xl md:text-3xl font-semibold">Membresías con valor</h2>
           <p className="mt-2 text-neutral-400">
-            Ser socio APCC significa pertenecer a la <strong>Red Asia Pacífico</strong> y acceder a beneficios exclusivos.
+            Ser socio APCC es pertenecer a la <strong>Red Asia Pacífico</strong> y acceder a beneficios exclusivos.
           </p>
         </div>
         <ul className="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
           {[
             'Participación en ferias, webinars y seminarios',
             'Membresía simultánea en HKLABA',
-            'Reuniones ejecutivas de orientación comercial',
+            'Reuniones ejecutivas de orientación',
             'Visibilidad en web, newsletter y directorios',
           ].map((b) => (
             <li key={b} className="bg-neutral-900 border border-neutral-800 rounded-2xl p-4">{b}</li>
@@ -216,15 +236,9 @@ export default function Page() {
                 <Link href={p.website} target="_blank" className="text-neutral-300 hover:text-white underline underline-offset-4">
                   Sitio web
                 </Link>
-                {p.linkedin && (
-                  <Link href={p.linkedin} target="_blank" className="text-neutral-300 hover:text-white">LinkedIn</Link>
-                )}
-                {p.instagram && (
-                  <Link href={p.instagram} target="_blank" className="text-neutral-300 hover:text-white">Instagram</Link>
-                )}
-                {p.x && (
-                  <Link href={p.x} target="_blank" className="text-neutral-300 hover:text-white">X</Link>
-                )}
+                {p.linkedin && <Link href={p.linkedin} target="_blank" className="text-neutral-300 hover:text-white">LinkedIn</Link>}
+                {p.instagram && <Link href={p.instagram} target="_blank" className="text-neutral-300 hover:text-white">Instagram</Link>}
+                {p.x && <Link href={p.x} target="_blank" className="text-neutral-300 hover:text-white">X</Link>}
               </div>
             </article>
           ))}
@@ -235,13 +249,16 @@ export default function Page() {
       <section id="trayectoria" className="container py-14">
         <div className="max-w-3xl">
           <h2 className="text-2xl md:text-3xl font-semibold">Nuestra trayectoria</h2>
-          <p className="mt-3 text-neutral-300">
-            Fundada el <strong>6 de marzo de 2002</strong>, la APCC se ha consolidado como un <strong>hub estratégico</strong> para empresas de Chile,
-            Perú y Bolivia. Nuestra misión es conectar América Latina con Asia mediante relaciones sólidas, recursos confiables y oportunidades reales.
+        </div>
+        <div className="mt-3 grid gap-4">
+          <p className="text-neutral-300 max-w-3xl">
+            Fundada el <strong>6 de marzo de 2002</strong>, la APCC se ha consolidado como un <strong>hub estratégico</strong> para
+            <strong> empresas de Chile y LatAm</strong>. Conectamos la región con Asia mediante relaciones sólidas,
+            recursos confiables y oportunidades reales.
           </p>
-          <p className="mt-3 text-neutral-400">
-            Con el <strong>Plan 2026–2030</strong>, reforzamos ese compromiso: una cámara moderna, digital y enfocada en resultados que promuevan la
-            renovación continua de nuestros socios gracias al valor generado año tras año.
+          <p className="text-neutral-400 max-w-3xl">
+            Con el <strong>Plan 2026–2030</strong>, reforzamos ese compromiso: una cámara moderna, digital y enfocada en resultados
+            que impulsa la renovación continua de nuestros socios gracias al valor generado año tras año.
           </p>
         </div>
       </section>
@@ -256,7 +273,7 @@ export default function Page() {
             </p>
           </div>
           <div className="flex gap-3">
-            <Link href="/membresias" className="btn btn-primary">Ver planes</Link>
+            <Link href="/membresias" className="btn btn-primary">Comparar planes</Link>
             <Link href="/contacto" className="btn btn-secondary">Agendar llamada</Link>
           </div>
         </div>
@@ -264,3 +281,4 @@ export default function Page() {
     </>
   );
 }
+
