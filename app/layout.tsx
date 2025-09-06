@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 border-b border-neutral-800">
           <nav className="container h-16 flex items-center justify-between">
             <Link href="/" className="text-xl font-semibold tracking-tight">
-              Cámara de Comercio Asia Pacífico – APCC
+              Cámara Asia Pacífico – APCC
             </Link>
             <div className="hidden md:flex items-center gap-6">
               <NavLink href="/quienes-somos">Quiénes somos</NavLink>
