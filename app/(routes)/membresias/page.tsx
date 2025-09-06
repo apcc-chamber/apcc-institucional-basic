@@ -4,13 +4,13 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Membresías',
   description:
-    'Membresías APCC 2026–2030: Essential, Business y Corporate. Beneficios reales para importadores y exportadores: misiones, roundtables, business matching e inteligencia de mercado.',
+    'Membresías APCC 2026–2030: Puente Asia, Comercio Activo y Red Global. Beneficios reales: misiones, roundtables, business matching, networking e inteligencia comercial.',
 };
 
 type Plan = {
-  id: 'essential' | 'business' | 'corporate';
+  id: 'puente' | 'activo' | 'global';
   name: string;
-  price?: string; // si aún no tienes precio público, puedes dejar "A convenir"
+  price: string;
   blurb: string;
   best?: boolean;
   features: string[];
@@ -21,74 +21,76 @@ type Plan = {
 
 const PLANS: Plan[] = [
   {
-    id: 'essential',
-    name: 'Essential',
-    price: 'UF — A convenir',
-    blurb:
-      'Para emprendedores y PYMES que comienzan con Asia. Acceso a la red, contenidos y actividades base.',
+    id: 'puente',
+    name: 'Puente Asia (Básica)',
+    price: '$250.000 CLP / año',
+    blurb: 'Pensada para PYMEs y nuevos importadores que comienzan con Asia.',
     features: [
-      'Acceso a la Red Asia Pacífico',
-      '1 Roundtable sectorial / trimestre',
-      'Webinars y seminarios (cupos estándar)',
-      'Guías y reportes intro (biblioteca digital)',
-      'Difusión básica en newsletter',
-      'Orientación comercial inicial (1 sesión)',
+      'Certificado oficial de socio',
+      'Webinars mensuales (tendencias, aduanas, logística, financiamiento)',
+      'Boletín con oportunidades Asia–Pacífico',
+      '1 participación anual en mesa gremial',
+      'Descuentos en cursos y seminarios',
+      'Acceso a biblioteca digital de guías y reportes',
+      'Acceso a grupos segmentados (WhatsApp/Slack)',
     ],
     ctaHref: 'https://join.asiapacific-chamber.com',
-    ctaLabel: 'Comenzar con Essential',
-    note: 'Ideal para validar oportunidades y primeros contactos.',
+    ctaLabel: 'Unirme a Puente Asia',
+    note: 'Ideal para iniciar y validar oportunidades con Asia.',
   },
   {
-    id: 'business',
-    name: 'Business',
-    price: 'UF — A convenir',
+    id: 'activo',
+    name: 'Comercio Activo (Empresarial)',
+    price: '$600.000 CLP / año',
     blurb:
-      'Para empresas en crecimiento con flujo estable de importación/exportación. Soporte y visibilidad ampliada.',
+      'Para empresas consolidadas en importación/exportación que buscan networking y prioridad en agenda.',
     best: true,
     features: [
-      'Todo lo de Essential',
-      '2 Roundtables sectoriales / trimestre',
-      'Business Matching con proveedores verificados',
-      'Agenda preferente en ferias / misiones',
-      'Guías y reportes sectoriales avanzados',
-      'Difusión destacada en web y newsletter',
-      '2 reuniones ejecutivas de orientación / año',
+      'Todos los beneficios de “Puente Asia”',
+      'Inclusión en directorio oficial (web y catálogos digitales)',
+      'Networking exclusivo trimestral (desayunos / rondas de negocio)',
+      '1 asesoría anual en comercio exterior',
+      'Prioridad en misiones comerciales a China y Hong Kong',
+      'Derecho preferente a exponer en seminarios de la cámara',
+      'Cobertura comunicacional en medios de la cámara',
     ],
     ctaHref: 'https://join.asiapacific-chamber.com',
-    ctaLabel: 'Elegir Business',
-    note: 'La membresía más elegida por PYMES y medianas.',
+    ctaLabel: 'Elegir Comercio Activo',
+    note: 'La opción recomendada para PYMEs con flujo estable.',
   },
   {
-    id: 'corporate',
-    name: 'Corporate',
-    price: 'UF — A convenir',
+    id: 'global',
+    name: 'Red Global (Corporativa Premium)',
+    price: '$1.200.000 CLP / año',
     blurb:
-      'Para corporativos y grupos empresariales que requieren agenda a medida y presencia regional.',
+      'Para corporativos y grupos empresariales que requieren posicionamiento internacional y agenda a medida.',
     features: [
-      'Todo lo de Business',
-      'Agenda curada 1:1 en misiones y ferias',
-      'Mesa de trabajo ejecutiva (C-level)',
-      'Reportes a medida y alertas comerciales',
-      'Branding corporativo en eventos seleccionados',
-      'Capacitaciones in-house (hasta 2 / año)',
-      'Reuniones trimestrales de seguimiento',
+      'Todos los beneficios de “Comercio Activo”',
+      'Logo destacado en web, newsletters y eventos',
+      '2 asesorías estratégicas/año (marketing internacional, financiamiento, partners en Asia)',
+      'Acceso directo a HKLABA y cámaras aliadas (Perú y Bolivia)',
+      'Participación garantizada en misiones comerciales (mín. 2/año)',
+      'Invitación VIP a foros internacionales (p.ej., Hong Kong Forum)',
+      'Copatrocinio de seminarios/webinars con visibilidad de marca',
     ],
     ctaHref: 'https://join.asiapacific-chamber.com',
     ctaLabel: 'Hablar con APCC',
-    note: 'Diseñada para impacto multipaís y equipos comerciales.',
+    note: 'Hecha para impacto regional y equipos comerciales.',
   },
 ];
 
 const COMPARISON = [
-  { feature: 'Red Asia Pacífico', essential: 'Sí', business: 'Sí', corporate: 'Sí' },
-  { feature: 'Roundtables por trimestre', essential: '1', business: '2', corporate: '2 + ejecutivas' },
-  { feature: 'Webinars / Seminarios', essential: 'Acceso estándar', business: 'Preferencia de cupos', corporate: 'Preferencia + branding' },
-  { feature: 'Business Matching', essential: '—', business: 'Sí', corporate: 'Sí (curado 1:1)' },
-  { feature: 'Misiones a Asia', essential: 'Cupos estándar', business: 'Preferente', corporate: 'Curada 1:1' },
-  { feature: 'Reportes / Guías', essential: 'Intro', business: 'Sectoriales', corporate: 'A medida' },
-  { feature: 'Difusión', essential: 'Newsletter (básica)', business: 'Web + Newsletter', corporate: 'Destacada / eventos' },
-  { feature: 'Orientación ejecutiva', essential: '1 sesión', business: '2 / año', corporate: 'Trimestral' },
-  { feature: 'Capacitaciones in-house', essential: '—', business: '—', corporate: 'Hasta 2 / año' },
+  { feature: 'Certificado de socio', puente: 'Sí', activo: 'Sí', global: 'Sí' },
+  { feature: 'Webinars mensuales', puente: 'Sí', activo: 'Sí (prioridad)', global: 'Sí (prioridad + branding)' },
+  { feature: 'Boletín oportunidades', puente: 'Sí', activo: 'Sí', global: 'Sí' },
+  { feature: 'Mesa gremial / año', puente: '1', activo: '1', global: '1 + ejecutivas' },
+  { feature: 'Cursos / seminarios', puente: 'Descuentos', activo: 'Descuentos + exponer', global: 'Descuentos + copatrocinar' },
+  { feature: 'Directorio oficial', puente: '—', activo: 'Sí', global: 'Sí (destacado)' },
+  { feature: 'Networking trimestral', puente: '—', activo: 'Sí', global: 'Sí (VIP)' },
+  { feature: 'Asesoría comercio exterior', puente: '—', activo: '1 anual', global: '2 estratégicas/año' },
+  { feature: 'Misiones a Asia', puente: 'Acceso', activo: 'Prioridad', global: 'Garantizadas (mín. 2/año)' },
+  { feature: 'HKLABA / Alianzas', puente: '—', activo: '—', global: 'Acceso directo' },
+  { feature: 'Visibilidad de marca', puente: '—', activo: 'Web/Newsletter', global: 'Destacado + eventos' },
 ];
 
 export default function Page() {
@@ -98,11 +100,11 @@ export default function Page() {
       <header className="max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-semibold">Membresías APCC 2026–2030</h1>
         <p className="mt-3 text-neutral-300">
-          Programas diseñados para entregar <strong>valor real y renovable</strong> a importadores y exportadores: inteligencia de mercado,
-          networking sectorial, business matching y acceso a misiones y ferias en Asia.
+          Programas pensados para entregar <strong>valor real y renovable</strong>: inteligencia comercial, networking
+          sectorial, business matching y acceso a misiones y ferias en Asia.
         </p>
         <div className="mt-6 text-sm text-neutral-400">
-          ¿Tienes dudas? <Link href="/contacto" className="underline underline-offset-4 hover:text-neutral-200">Agenda una llamada</Link>.
+          ¿Dudas? <Link href="/contacto" className="underline underline-offset-4 hover:text-neutral-200">Agenda una llamada</Link>.
         </div>
       </header>
 
@@ -145,18 +147,18 @@ export default function Page() {
         ))}
       </section>
 
-      {/* SELLOS / BENEFICIOS TRANSVERSALES */}
+      {/* BENEFICIOS TRANSVERSALES */}
       <section className="mt-12">
         <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-          <h3 className="text-lg font-semibold">Beneficios transversales</h3>
-          <p className="mt-2 text-sm text-neutral-400">
-            Todos los planes incluyen soporte del equipo APCC, calendario editorial con <em>inteligencia comercial</em> y acceso a la Red Asia Pacífico.
-          </p>
-          <ul className="mt-4 grid md:grid-cols-3 gap-2 text-sm">
+          <h3 className="text-lg font-semibold">Beneficios transversales (todos los planes)</h3>
+          <ul className="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-2 text-sm">
             {[
-              'Acompañamiento del equipo gremial y comercial',
-              'Calendario de contenidos: guías, alertas y radar de ferias',
-              'Acceso a la Red Asia Pacífico y HKLABA',
+              'Plataforma digital: biblioteca de guías, reportes y acuerdos',
+              'Grupos segmentados (importadores, exportadores, startups, logística)',
+              'Cobertura comunicacional en medios y redes de la cámara',
+              'Trato directo con gerencias (gremial, comercial, comunicaciones)',
+              'Eventos: mínimo 1 webinar/mes + 1 evento presencial/trimestre',
+              'Misiones comerciales: 2 viajes/año a China y Hong Kong',
             ].map((x) => (
               <li key={x} className="flex gap-2">
                 <span aria-hidden>•</span>
@@ -175,25 +177,25 @@ export default function Page() {
             <thead className="bg-neutral-950/60">
               <tr className="border-b border-neutral-800">
                 <th className="text-left p-3">Característica</th>
-                <th className="text-left p-3">Essential</th>
-                <th className="text-left p-3">Business</th>
-                <th className="text-left p-3">Corporate</th>
+                <th className="text-left p-3">Puente Asia</th>
+                <th className="text-left p-3">Comercio Activo</th>
+                <th className="text-left p-3">Red Global</th>
               </tr>
             </thead>
             <tbody>
               {COMPARISON.map((row) => (
                 <tr key={row.feature} className="border-b border-neutral-800">
                   <td className="p-3 text-neutral-300">{row.feature}</td>
-                  <td className="p-3 text-neutral-400">{row.essential}</td>
-                  <td className="p-3 text-neutral-400">{row.business}</td>
-                  <td className="p-3 text-neutral-400">{row.corporate}</td>
+                  <td className="p-3 text-neutral-400">{row.puente}</td>
+                  <td className="p-3 text-neutral-400">{row.activo}</td>
+                  <td className="p-3 text-neutral-400">{row.global}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
         <div className="mt-4 text-xs text-neutral-500">
-          *Las agendas y cupos en ferias/misiones están sujetas a disponibilidad y calendario oficial.
+          *Agenda y cupos en ferias/misiones sujetos a disponibilidad y calendario oficial.
         </div>
       </section>
 
@@ -202,11 +204,11 @@ export default function Page() {
         {[
           {
             q: '¿Puedo cambiar de plan más adelante?',
-            a: 'Sí. Puedes subir o bajar de plan previo aviso y ajuste proporcional.',
+            a: 'Sí. Puedes subir o bajar de plan con aviso previo y ajuste proporcional.',
           },
           {
             q: '¿Las misiones incluyen pasajes y hotel?',
-            a: 'No, esos costos son del participante. APCC gestiona agendas, ferias y reuniones.',
+            a: 'No. Esos costos son del participante; APCC gestiona agenda, ferias y reuniones.',
           },
           {
             q: '¿Hacen facturación en Chile?',
@@ -214,7 +216,7 @@ export default function Page() {
           },
           {
             q: '¿Puedo sumar a mi equipo a los webinars?',
-            a: 'Sí. Los cupos varían por plan y disponibilidad. En Corporate se pueden coordinar sesiones in-house.',
+            a: 'Sí. Los cupos varían por plan y disponibilidad. En Red Global se pueden coordinar sesiones in-house/corporativas.',
           },
         ].map((item) => (
           <article key={item.q} className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
