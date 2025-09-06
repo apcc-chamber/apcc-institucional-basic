@@ -10,7 +10,11 @@ export const metadata: Metadata = {
 };
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return <Link href={href} className="text-sm text-neutral-300 hover:text-white">{children}</Link>;
+  return (
+    <Link href={href} className="text-sm text-neutral-300 hover:text-white">
+      {children}
+    </Link>
+  );
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,25 +26,61 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="text-xl font-semibold tracking-tight">
               Cámara de Comercio Asia Pacífico – APCC
             </Link>
+
+            {/* Desktop */}
             <div className="hidden md:flex items-center gap-6">
               <a href="/#beneficios" className="text-sm text-neutral-300 hover:text-white">Beneficios</a>
+              <NavLink href="/quienes-somos">Quiénes somos</NavLink>
+              <NavLink href="/recursos">Recursos</NavLink>
+              <NavLink href="/directorio">Directorio</NavLink>
+              <NavLink href="/servicios">Servicios</NavLink>
               <NavLink href="/membresias">Membresías</NavLink>
               <NavLink href="/eventos">Eventos</NavLink>
               <NavLink href="/noticias">Noticias</NavLink>
               <NavLink href="/contacto">Contacto</NavLink>
               <Link href="https://join.asiapacific-chamber.com" className="btn btn-primary">Hazte socio</Link>
             </div>
+
+            {/* Mobile */}
+            <details className="md:hidden">
+              <summary className="cursor-pointer text-sm text-neutral-300 hover:text-white">
+                Menú
+              </summary>
+              <div className="mt-3 p-3 rounded-2xl border border-neutral-800 bg-neutral-900 flex flex-col gap-3">
+                <a href="/#beneficios" className="text-sm text-neutral-300 hover:text-white">Beneficios</a>
+                <NavLink href="/quienes-somos">Quiénes somos</NavLink>
+                <NavLink href="/recursos">Recursos</NavLink>
+                <NavLink href="/directorio">Directorio</NavLink>
+                <NavLink href="/servicios">Servicios</NavLink>
+                <NavLink href="/membresias">Membresías</NavLink>
+                <NavLink href="/eventos">Eventos</NavLink>
+                <NavLink href="/noticias">Noticias</NavLink>
+                <NavLink href="/contacto">Contacto</NavLink>
+                <Link
+                  href="https://join.asiapacific-chamber.com"
+                  className="btn btn-primary w-full justify-center"
+                >
+                  Hazte socio
+                </Link>
+              </div>
+            </details>
           </nav>
         </header>
+
         <main>{children}</main>
+
         <footer className="border-t border-neutral-800">
           <div className="container py-10 text-sm text-neutral-400 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="space-y-1">
-              <div className="font-medium text-neutral-300">Cámara de Comercio Asia Pacífico – APCC</div>
+              <div className="font-medium text-neutral-300">
+                Cámara de Comercio Asia Pacífico – APCC
+              </div>
               <div>Santiago, Chile · Alianzas en Perú y Bolivia</div>
               <div>info@asiapacific-chamber.com · +56 9 2008 0031</div>
             </div>
-            <div className="text-xs">© {new Date().getFullYear()} APCC. Todos los derechos reservados.</div>
+            <div className="text-xs">
+              © {new Date().getFullYear()} APCC. Todos los derechos reservados.
+            </div>
           </div>
         </footer>
       </body>
