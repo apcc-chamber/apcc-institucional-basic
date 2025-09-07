@@ -4,11 +4,11 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Membresías',
   description:
-    'Membresías APCC 2026–2030: Puente Asia, Comercio Activo y Red Global. Beneficios reales: misiones, roundtables, business matching, networking e inteligencia comercial.',
+    'Membresías APCC 2026–2030: Essential, Business y Corporate. Beneficios reales: misiones, roundtables, business matching, networking e inteligencia comercial.',
 };
 
 type Plan = {
-  id: 'puente' | 'activo' | 'global';
+  id: 'essential' | 'business' | 'corporate';
   name: string;
   price: string;
   blurb: string;
@@ -21,8 +21,8 @@ type Plan = {
 
 const PLANS: Plan[] = [
   {
-    id: 'puente',
-    name: 'Puente Asia (Básica)',
+    id: 'essential',
+    name: 'Essential',
     price: '$250.000 CLP / año',
     blurb: 'Pensada para PYMEs y nuevos importadores que comienzan con Asia.',
     features: [
@@ -35,18 +35,18 @@ const PLANS: Plan[] = [
       'Acceso a grupos segmentados (WhatsApp/Slack)',
     ],
     ctaHref: 'https://join.asiapacific-chamber.com',
-    ctaLabel: 'Unirme a Puente Asia',
+    ctaLabel: 'Unirme a Essential',
     note: 'Ideal para iniciar y validar oportunidades con Asia.',
   },
   {
-    id: 'activo',
-    name: 'Comercio Activo (Empresarial)',
+    id: 'business',
+    name: 'Business',
     price: '$600.000 CLP / año',
     blurb:
       'Para empresas consolidadas en importación/exportación que buscan networking y prioridad en agenda.',
     best: true,
     features: [
-      'Todos los beneficios de “Puente Asia”',
+      'Todos los beneficios de “Essential”',
       'Inclusión en directorio oficial (web y catálogos digitales)',
       'Networking exclusivo trimestral (desayunos / rondas de negocio)',
       '1 asesoría anual en comercio exterior',
@@ -55,17 +55,17 @@ const PLANS: Plan[] = [
       'Cobertura comunicacional en medios de la cámara',
     ],
     ctaHref: 'https://join.asiapacific-chamber.com',
-    ctaLabel: 'Elegir Comercio Activo',
+    ctaLabel: 'Elegir Business',
     note: 'La opción recomendada para PYMEs con flujo estable.',
   },
   {
-    id: 'global',
-    name: 'Red Global (Corporativa Premium)',
+    id: 'corporate',
+    name: 'Corporate',
     price: '$1.200.000 CLP / año',
     blurb:
       'Para corporativos y grupos empresariales que requieren posicionamiento internacional y agenda a medida.',
     features: [
-      'Todos los beneficios de “Comercio Activo”',
+      'Todos los beneficios de “Business”',
       'Logo destacado en web, newsletters y eventos',
       '2 asesorías estratégicas/año (marketing internacional, financiamiento, partners en Asia)',
       'Acceso directo a HKLABA y cámaras aliadas (Perú y Bolivia)',
@@ -80,17 +80,17 @@ const PLANS: Plan[] = [
 ];
 
 const COMPARISON = [
-  { feature: 'Certificado de socio', puente: 'Sí', activo: 'Sí', global: 'Sí' },
-  { feature: 'Webinars mensuales', puente: 'Sí', activo: 'Sí (prioridad)', global: 'Sí (prioridad + branding)' },
-  { feature: 'Boletín oportunidades', puente: 'Sí', activo: 'Sí', global: 'Sí' },
-  { feature: 'Mesa gremial / año', puente: '1', activo: '1', global: '1 + ejecutivas' },
-  { feature: 'Cursos / seminarios', puente: 'Descuentos', activo: 'Descuentos + exponer', global: 'Descuentos + copatrocinar' },
-  { feature: 'Directorio oficial', puente: '—', activo: 'Sí', global: 'Sí (destacado)' },
-  { feature: 'Networking trimestral', puente: '—', activo: 'Sí', global: 'Sí (VIP)' },
-  { feature: 'Asesoría comercio exterior', puente: '—', activo: '1 anual', global: '2 estratégicas/año' },
-  { feature: 'Misiones a Asia', puente: 'Acceso', activo: 'Prioridad', global: 'Garantizadas (mín. 2/año)' },
-  { feature: 'HKLABA / Alianzas', puente: '—', activo: '—', global: 'Acceso directo' },
-  { feature: 'Visibilidad de marca', puente: '—', activo: 'Web/Newsletter', global: 'Destacado + eventos' },
+  { feature: 'Certificado de socio', essential: 'Sí', business: 'Sí', corporate: 'Sí' },
+  { feature: 'Webinars mensuales', essential: 'Sí', business: 'Sí (prioridad)', corporate: 'Sí (prioridad + branding)' },
+  { feature: 'Boletín oportunidades', essential: 'Sí', business: 'Sí', corporate: 'Sí' },
+  { feature: 'Mesa gremial / año', essential: '1', business: '1', corporate: '1 + ejecutivas' },
+  { feature: 'Cursos / seminarios', essential: 'Descuentos', business: 'Descuentos + exponer', corporate: 'Descuentos + copatrocinar' },
+  { feature: 'Directorio oficial', essential: '—', business: 'Sí', corporate: 'Sí (destacado)' },
+  { feature: 'Networking trimestral', essential: '—', business: 'Sí', corporate: 'Sí (VIP)' },
+  { feature: 'Asesoría comercio exterior', essential: '—', business: '1 anual', corporate: '2 estratégicas/año' },
+  { feature: 'Misiones a Asia', essential: 'Acceso', business: 'Prioridad', corporate: 'Garantizadas (mín. 2/año)' },
+  { feature: 'HKLABA / Alianzas', essential: '—', business: '—', corporate: 'Acceso directo' },
+  { feature: 'Visibilidad de marca', essential: '—', business: 'Web/Newsletter', corporate: 'Destacado + eventos' },
 ];
 
 export default function Page() {
@@ -177,18 +177,18 @@ export default function Page() {
             <thead className="bg-neutral-950/60">
               <tr className="border-b border-neutral-800">
                 <th className="text-left p-3">Característica</th>
-                <th className="text-left p-3">Puente Asia</th>
-                <th className="text-left p-3">Comercio Activo</th>
-                <th className="text-left p-3">Red Global</th>
+                <th className="text-left p-3">Essential</th>
+                <th className="text-left p-3">Business</th>
+                <th className="text-left p-3">Corporate</th>
               </tr>
             </thead>
             <tbody>
               {COMPARISON.map((row) => (
                 <tr key={row.feature} className="border-b border-neutral-800">
                   <td className="p-3 text-neutral-300">{row.feature}</td>
-                  <td className="p-3 text-neutral-400">{row.puente}</td>
-                  <td className="p-3 text-neutral-400">{row.activo}</td>
-                  <td className="p-3 text-neutral-400">{row.global}</td>
+                  <td className="p-3 text-neutral-400">{row.essential}</td>
+                  <td className="p-3 text-neutral-400">{row.business}</td>
+                  <td className="p-3 text-neutral-400">{row.corporate}</td>
                 </tr>
               ))}
             </tbody>
@@ -216,7 +216,7 @@ export default function Page() {
           },
           {
             q: '¿Puedo sumar a mi equipo a los webinars?',
-            a: 'Sí. Los cupos varían por plan y disponibilidad. En Red Global se pueden coordinar sesiones in-house/corporativas.',
+            a: 'Sí. Los cupos varían por plan y disponibilidad. En Corporate se pueden coordinar sesiones in-house/corporativas.',
           },
         ].map((item) => (
           <article key={item.q} className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
