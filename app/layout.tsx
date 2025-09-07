@@ -44,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   </nav>
 </header>
 
+
         {/* MAIN */}
         <main>{children}</main>
 
