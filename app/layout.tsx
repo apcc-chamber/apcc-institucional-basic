@@ -19,29 +19,30 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body>
-        {/* HEADER */}
-        <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 border-b border-neutral-800">
-          <nav className="container h-16 flex items-center justify-between">
-            <Link href="/" className="text-xl font-semibold tracking-tight">
-              Cámara Asia Pacífico – APCC
-            </Link>
-            <div className="hidden md:flex items-center gap-6">
-              <NavLink href="/quienes-somos">Quiénes somos</NavLink>
-              <NavLink href="/membresias">Membresías</NavLink>
-              <NavLink href="/eventos">Eventos</NavLink>
-              <NavLink href="/noticias">Noticias</NavLink>
-              <NavLink href="/contacto">Contacto</NavLink>
-              <Link
-                href="https://join.asiapacific-chamber.com"
-                className="btn btn-primary"
-              >
-                Hazte socio
-              </Link>
-            </div>
-          </nav>
-        </header>
+    <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 border-b border-neutral-800">
+  <nav className="container h-16 flex items-center justify-between">
+    <Link href="/" className="flex items-center">
+      <img
+        src="/Logo_apcc_web.png"
+        alt="Cámara Asia Pacífico – APCC"
+        className="h-10 w-auto"
+      />
+    </Link>
+    <div className="hidden md:flex items-center gap-6">
+      <NavLink href="/quienes-somos">Quiénes somos</NavLink>
+      <NavLink href="/membresias">Membresías</NavLink>
+      <NavLink href="/eventos">Eventos</NavLink>
+      <NavLink href="/noticias">Noticias</NavLink>
+      <NavLink href="/contacto">Contacto</NavLink>
+      <Link
+        href="https://join.asiapacific-chamber.com"
+        className="btn btn-primary"
+      >
+        Hazte socio
+      </Link>
+    </div>
+  </nav>
+</header>
 
         {/* MAIN */}
         <main>{children}</main>
